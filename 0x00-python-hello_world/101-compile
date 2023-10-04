@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Get the base name of the script without the extension
+FILE_NAME=$(filename $PYFILE .py)
+
+# Compile the Python script
+python -m compileall -b $PYFILE
+
+# Rename the output file to $PYFILEc
+mv ${FILE_NAME}.pyc ${FILE_NAME}c.pyc
