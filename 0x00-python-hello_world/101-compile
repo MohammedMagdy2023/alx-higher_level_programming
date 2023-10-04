@@ -7,4 +7,4 @@ FILE_NAME=$(filename $PYFILE .py)
 python -m compileall -b $PYFILE
 
 # Rename the output file to $PYFILEc
-mv ${FILE_NAME}.pyc ${FILE_NAME}c.pyc
+mv ${FILE_NAME}.py ${FILE_NAME}c.pyc
