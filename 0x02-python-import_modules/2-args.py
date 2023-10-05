@@ -17,4 +17,4 @@ if __name__ == "__main__":
                 print("{} : {}".format(j, i))
                 j += 1
     else:  # This prints the argument if there is no arguments
-        print(" {} arguments.".format(0))
+        print("0 arguments.")
