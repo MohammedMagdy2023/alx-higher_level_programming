@@ -1,23 +1,25 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     import sys
-    arg_c = len(sys.argv[1:])
-    arg_v = sys.argv[1:]
-    if arg_c != 3:
-        exit(1)
+    from calculator_1 import add, sub, mul, div
+    # Exit If There Is An Error While Calling Func
+    if len(sys.argv) != 4:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        sys.exit(1)
+    # Check For Operator
+    a = int(sys.argv[1])
+    operator = sys.argv[2]
+    b = int(sys.argv[3])
+    if operator == '+':
+        res = add(a, b)
+    elif operator == '-':
+        res = sub(a, b)
+    elif operator == '*':
+        res = mul(a, b)
+    elif operator == '/':
+        res = div(a, b)
     else:
-        a = sys.argv[1]
-        operator = sys.argv[2]
-        b = sys.argv[3]
-        match operator:
-            case '+':
-                print("{} + {} = {}".format(a, b, (int(a) + int(b))))
-            case '-':
-                print("{} - {} = {}".format(a, b, (int(a) - int(b))))
-            case '*':
-                print("{} * {} = {}".format(a, b, (int(a) * int(b))))
-            case '/':
-                print("{} / {} = {}".format(a, b, (int(a) / int(b))))
-            case _:
-                print("Unknown operator. Available operators: +, -, * and /")
-                exit(1)
+        # if Invlid Operator
+        print("Unknown operator. Available operators: +, -, * and /")
+        sys.exit(1)
+    print("{} {} {} = {}".format(a, operator, b, res))
