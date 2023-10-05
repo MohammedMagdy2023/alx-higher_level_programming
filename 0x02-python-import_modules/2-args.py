@@ -16,5 +16,5 @@ if __name__ == "__main__":
             for i in argv:
                 print("{} : {}".format(j, i))
                 j += 1
-    else: # This prints the argument if there is no arguments
+    else:  # This prints the argument if there is no arguments
         print(" {} arguments.".format(0))
