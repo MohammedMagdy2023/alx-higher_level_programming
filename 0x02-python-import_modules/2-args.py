@@ -7,7 +7,7 @@ if __name__ == "__main__":
         if argc == 1 :
                 j = 1
                 print("{} argument".format(len(argv)))
-                print("{} : {}".format(j, i))
+                print("{} : {}".format(j, argv))
         else:
             j = 1
             print("{} arguments".format(len(argv)))
