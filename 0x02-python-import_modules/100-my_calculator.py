@@ -6,18 +6,18 @@ if __name__ == "__main__":
     if arg_c != 3:
         exit(1)
     else:
-        a = sys.argv[2]
-        b = sys.ergv[4]
-        operator = sys.argv[3]
+        a = sys.argv[1]
+        operator = sys.argv[2]
+        b = sys.argv[3]
         match operator:
             case '+':
-                print("{} + {} = {}".format(a, b, int(a) + int(b)))
+                print("{} + {} = {}".format(a, b, (int(a) + int(b))))
             case '-':
-                print("{} - {} = {}".format(a, b, int(a) - int(b)))
+                print("{} - {} = {}".format(a, b, (int(a) - int(b))))
             case '*':
-                print("{} * {} = {}".format(a, b, int(a) * int(b)))
+                print("{} * {} = {}".format(a, b, (int(a) * int(b))))
             case '/':
-                print("{} / {} = {}".format(a, b, int(a) / int(b)))
+                print("{} / {} = {}".format(a, b, (int(a) / int(b))))
             case _:
                 print("Unknown operator. Available operators: +, -, * and /")
                 exit(1)
