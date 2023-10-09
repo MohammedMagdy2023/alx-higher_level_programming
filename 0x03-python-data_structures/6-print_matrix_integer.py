@@ -3,7 +3,7 @@ def print_matrix_integer(matrix=[[]]):
     if len(matrix) <= 0:
         return None
     else:
-        for i in range(0, len(matrix)):
-            for j in range(0, len(matrix[i])):
-                print("{:d}".format(matrix[i][j]), end= " ")
+        for i in matrix:
+            for j in i:
+                print("{:d} ".format(j), end= "")
             print()
