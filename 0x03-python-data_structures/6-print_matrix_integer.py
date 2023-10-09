@@ -3,5 +3,7 @@ def print_matrix_integer(matrix=[[]]):
     if len(matrix) <= 0:
         return None
     else:
-        for row in matrix:
-            print(" ".join("{:d}".format(elem) for elem in row))
+        for i in matrix:
+            for j in i:
+                print(" ".join("{:d}".format(j)))
+            print()
