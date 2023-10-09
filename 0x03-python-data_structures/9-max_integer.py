@@ -5,7 +5,7 @@ def max_integer(my_list=[]):
         return None
     else:
         for i in my_list:
-            if i > Comp_num :
+            if i > Comp_num:
                 Comp_num = i
             else:
                 continue
