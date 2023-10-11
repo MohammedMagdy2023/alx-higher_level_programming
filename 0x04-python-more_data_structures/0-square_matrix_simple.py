@@ -3,7 +3,9 @@ def square_matrix_simple(matrix=[]):
     if not matrix:
         return matrix
     else:
-        new_matrix = [[0 for _ in range(len(matrix[0]))]for _ in range(len(matrix))]
+        row = range(len(matrix))
+        col = range(len(matrix[0]))
+        new_matrix = [[0 for _ in col]for _ in row]
         for i in range(len(matrix)):
             for j in range(len(matrix[0])):
                 new_matrix[i][j] = matrix[i][j] ** 2
