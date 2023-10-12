@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if type(roman_string) != str or type(roman_string) == None:
+    if isinstance(roman_string, str) or roman_string == None:
         return 0
     else:
         character = ["I", "V", "X", "L", "C", "D", "M"]
