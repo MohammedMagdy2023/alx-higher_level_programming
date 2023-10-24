@@ -12,7 +12,7 @@ def list_division(my_list_1, my_list_2, list_length):
             res = 0
         except IndexError:
             print("out of range")
-            resureslt = 0
+            res = 0
         finally:
             printablelist.append(res)
     return printablelist
