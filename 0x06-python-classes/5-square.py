@@ -35,10 +35,13 @@ class Square:
             raise "size must be an integer"
 
     def area(self):
-        return self.__size ** 2 
+        return self.__size ** 2
 
     def my_print(self):
-        for i in range(self.__size):
-            for j in range(self.__size):
-                print("#", end="")
-            print()
+        if self.__size == 0:
+            print("\n")
+        else:
+            for i in range(self.__size):
+                for j in range(self.__size):
+                    print("#", end="")
+                print()
