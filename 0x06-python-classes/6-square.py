@@ -18,7 +18,7 @@ class Square:
     with the character #:
     if size is equal to 0, print an empty line
     """
-    def __init__(self, size=0, position=0):
+    def __init__(self, size=0, position=(0, 0)):
         self.size = size
         self.position = position
 
@@ -41,21 +41,23 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple) or len(value) != 2 or \
-            not all(isinstance(i, int) and i >= 0 for i in value):
+        if (not isinstance(value, tuple) or
+                len(value) != 2 or
+                not all(isinstance(i, int) for i in value) or
+                not all(i >= 0 for i in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+        self.__position = value
 
     def area(self):
         return self.__size ** 2
 
     def my_print(self):
+        """Print the square with the # character."""
         if self.__size == 0:
-            print()
-        else:
-            print('\n' * self.__position[1], end="")
-            for i in range(self.__size):
-                print(' ' * self.__position[0], end="")
-                print('#' * self.__size)
-
+            print("")
+            return
+        [print("") for i in range(0, self.__position[1])]
+        for _ in range(0, self.__size):
+            [print(" ", end="") for _ in range(0, self.__position[0])]
+            [print("#", end="") for _ in range(0, self.__size)]
+            print("")
