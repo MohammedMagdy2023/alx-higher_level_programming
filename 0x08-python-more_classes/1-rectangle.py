@@ -13,8 +13,8 @@ class Rectangle:
         Errors:
             width and height should be integer or exception raised
         """
-        self.__width = width
-        self.__hieght = height
+        self.width = width
+        self.hieght = height
 
     @property
     def width(self):
