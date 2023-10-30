@@ -1,17 +1,18 @@
 #!/usr/bin/python3
 """Class Rectangle"""
 
+
 class Rectangle:
-    """P"""
+    """Getters and Setters"""
     def __init__(self, width=0, height=0):
         self.__width = width
-        self.__hieght=height
+        self.__hieght = height
 
-    @property #getter
+    @property  # getter
     def width(self):
         return self.__width
 
-    @property #getter
+    @property  # getter
     def height(self):
         return self.__hieght
 
