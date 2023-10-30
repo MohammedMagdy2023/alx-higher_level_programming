@@ -5,31 +5,41 @@
 class Rectangle:
     """Getters and Setters"""
     def __init__(self, width=0, height=0):
+        """Initialize a new Rectangle.
+
+        Arguments:
+            width: The width of the rectangle.
+            height: The height of the rectangle.
+        Errors:
+            width and height should be integer or exception raised
+        """
         self.__width = width
         self.__hieght = height
 
-    @property  # getter
+    @property
     def width(self):
+        """property getter width"""
         return self.__width
 
-    @property  # getter
+    @property
     def height(self):
+        """property getter height"""
         return self.__hieght
 
     @width.setter
     def width(self, value):
+        """property setter width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value < 0:
             raise ValueError("width must be >= 0")
-        else:
-            self.__width = value
+        self.__width = value
 
     @height.setter
     def height(self, value):
+        """property setter height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
             raise ValueError("height must be >= 0")
-        else:
-            self.__hieght = value
+        self.__hieght = value
