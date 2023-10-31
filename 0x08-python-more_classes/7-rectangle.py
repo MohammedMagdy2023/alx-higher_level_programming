@@ -67,12 +67,20 @@ class Rectangle:
             return (self.width + self.height) * 2
 
     def __str__(self):
-        """return # for every cell
-        created by self.width and self.height"""
-        if self.width == 0 or self.height == 0:
-            return ""
-        return ((str(Rectangle.print_symbol) * self.width + "\n") * 
-                self.height)[:-1]
+        """Return the printable representation of the Rectangle.
+
+        Represents the rectangle with the # character.
+        """
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+
+        res = []
+        for i in range(self.__height):
+            [res.append(str(self.print_symbol)) for j in range(self.width)]
+            if i != self.height - 1:
+                res.append("\n")
+        return ("".join(res))
+
 
     def __repr__(self):
         """
