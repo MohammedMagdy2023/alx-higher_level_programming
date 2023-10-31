@@ -58,7 +58,7 @@ class Rectangle:
             return (self.width + self.height) * 2
 
     def __str__(self):
-        """return # for every cell 
+        """return # for every cell
         created by self.width and self.height"""
         if self.__width == 0 or self.__height == 0:
             return ""
@@ -66,6 +66,6 @@ class Rectangle:
 
     def __repr__(self):
         """
-        return the usage for the rectangle class 
+        return the usage for the rectangle class
         """
         return "Rectangle({}, {})".format(self.__width, self.__height)
