@@ -69,9 +69,10 @@ class Rectangle:
     def __str__(self):
         """return # for every cell
         created by self.width and self.height"""
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return ""
-        return "\n".join([str(Rectangle.print_symbol) * self.__width for _ in range(self.__height)])
+        return "\n".join([str(Rectangle.print_symbol) *\
+                          self.width for _ in range(self.height)])
 
     def __repr__(self):
         """
