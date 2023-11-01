@@ -1,0 +1,23 @@
+
+===========================
+How to Use 3-say_my_name.py
+===========================
+
+This module Return the sum of given two numbers
+
+Usage
+=====
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+    >>> say_my_name("mohammed")
+    My name is mohammed 
+    >>> say_my_name(1520275, 98730)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string and last_name must be a string
+    >>> say_my_name("Hello", 98730)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+    >>> say_my_name(98730, "Hello")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string

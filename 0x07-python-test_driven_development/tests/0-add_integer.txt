@@ -1,0 +1,27 @@
+
+===========================
+How to Use 0-add_integer.py
+===========================
+
+This module Return the sum of given two numbers
+
+Usage
+=====
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(10, 55)
+    65
+    >>> add_integer(-1500, 200)
+    -1300
+    >>> add_integer(1520275, 98730)
+    1619005
+    >>> add_integer(2, 98)
+    100
+    >>> add_integer("Hello", 98730)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+    >>> add_integer(98730, "Hello")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+    >>> add_integer("Hi", "There")
+    Traceback (most recent call last):
+    TypeError: a and b must be integers or floats
