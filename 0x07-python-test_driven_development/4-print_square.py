@@ -23,5 +23,3 @@ def print_square(size):
         raise TypeError("size must be an integer")
     else:
         for _ in range(size):print("".join("#" * size))
-
-print_square(10)
