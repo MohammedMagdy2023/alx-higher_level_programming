@@ -1,15 +1,14 @@
 #!/usr/bin/python3
-"""add_integer return the sum of two integer numbers"""
+"""
+add_integer return the sum of two integer numbers
+a and b must be integers or floats, 
+Returns an integer: the addition of a and b
+"""
 
 
 def add_integer(a, b=98):
     """
-    add_integer
-    a and b must be integers or floats,
-    otherwise raise a TypeError exception
-    with the message a must be an integer or b must be an integer
-    a and b must be first casted to integers if they are float
-    Returns an integer: the addition of a and b
+    add_integer return the sum of two integer numbers
     """
 
     c_a = isinstance(a, int) or isinstance(a, float)
