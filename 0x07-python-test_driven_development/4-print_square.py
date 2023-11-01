@@ -4,6 +4,7 @@ a function that prints a square with the character #
     Prototype: def print_square(size):
 """
 
+
 def print_square(size):
     """
     size is the size length of the square
@@ -22,4 +23,5 @@ def print_square(size):
     elif isinstance(size, float) and size < 0:
         raise TypeError("size must be an integer")
     else:
-        for _ in range(size):print("".join("#" * size))
+        for _ in range(size): 
+            print("".join("#" * size))
