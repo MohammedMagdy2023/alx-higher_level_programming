@@ -19,9 +19,9 @@ def add_integer(a, b=98):
     else:
         if not c_a and not c_b:
             raise TypeError("a and b must be integers or floats")
-        elif not c_a :
+        elif not c_a:
             raise TypeError("a must be an integer")
-        elif not c_b :
+        elif not c_b:
             raise TypeError("b must be an integer")
         else:
             Exception("Unkown Error happened")
