@@ -8,7 +8,7 @@ Prototype: def is_same_class(obj, a_class):
 
 def is_same_class(obj, a_class):
     """This function uses the type() function
-    to get the exact class of the object, 
+    to get the exact class of the object,
     and then compares it with a_class
     """
     return type(obj) is a_class
