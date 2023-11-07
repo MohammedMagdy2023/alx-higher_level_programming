@@ -10,4 +10,5 @@ You can assume that all the elements of the list will be of type int
 class MyList(list):
     """ a class MyList that inherits from list"""
     def print_sorted(self):
+        """Print a list in sorted ascending order"""
         print(sorted(self))
