@@ -7,7 +7,7 @@ You can assume that all the elements of the list will be of type int
 """
 
 
-class Mylist(list):
+class MyList(list):
     """ a class MyList that inherits from list"""
     def print_sorted(self):
         print(sorted(self))
