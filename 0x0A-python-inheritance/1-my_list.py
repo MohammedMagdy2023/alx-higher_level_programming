@@ -10,4 +10,4 @@ You can assume that all the elements of the list will be of type int
 class Myllist(list):
     """ a class MyList that inherits from list"""
     def print_sorted(self):
-        print(sorted(list))
+        print(sorted(self))
