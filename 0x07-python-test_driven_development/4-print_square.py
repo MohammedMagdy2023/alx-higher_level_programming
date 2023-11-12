@@ -30,5 +30,3 @@ def print_square(size):
                         print("#", end="")
                     else:
                         print("#")
-        else:
-            raise Exception("Unkown error happend")
