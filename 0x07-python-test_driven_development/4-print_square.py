@@ -24,7 +24,11 @@ def print_square(size):
         raise TypeError("size must be an integer")
     else:
         if isinstance(size, int):
-            for _ in range(size):
-                print("".join("#" * size))
+            for i in range(0, size):
+                for j in range(0, size):
+                    if j != (size - 1):
+                        print("#", end="")
+                    else:
+                        print("#")
         else:
             raise Exception("Unkown error happend")
