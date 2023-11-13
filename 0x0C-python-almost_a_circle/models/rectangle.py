@@ -32,13 +32,13 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """width property getter"""
+        """The width Private instance getter"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """width property setter"""
-        if type(value) != int:
+        """The width Private instance setter"""
+        if not isinstance(value, int):
             raise TypeError("width must be integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -46,13 +46,13 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """height property getter"""
+        """The height Private instance getter"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """height property setter"""
-        if type(value) != int:
+        """The height Private instance setter"""
+        if not isinstance(value, int):
             raise TypeError("height must be integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -60,13 +60,13 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """x property getter"""
+        """The x Private instance getter"""
         return self.__x
 
     @x.setter
     def x(self, value):
-        """x property setter"""
-        if type(value) != int:
+        """The x Private instance setter"""
+        if not isinstance(value, int):
             raise TypeError("x must be integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -74,13 +74,13 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """y property getter"""
+        """The y Private instance getter"""
         return self.__y
 
     @y.setter
     def y(self, value):
-        """y property setter"""
-        if type(value) != int:
+        """The y Private instance setter"""
+        if not isinstance(value, int):
             raise TypeError("y must be integer")
         if value < 0:
             raise ValueError("y must be >= 0")
