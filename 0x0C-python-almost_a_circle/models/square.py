@@ -36,9 +36,9 @@ class Square(Rectangle):
     def size(self, value):
         """The size Private instance setter"""
         if not isinstance(value, int):
-            raise TypeError("y must be an integer")
+            raise TypeError("size must be an integer")
         if value < 0:
-            raise ValueError("y must be >= 0")
+            raise ValueError("size must be >= 0")
         self.__size = value
 
     def __str__(self):
