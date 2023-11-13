@@ -25,6 +25,7 @@ class Square(Rectangle):
             ValueError: If either of x or y < 0.
         """
         super().__init__(size, size, x, y, id)
+        self.size = size
 
     @property
     def size(self):
