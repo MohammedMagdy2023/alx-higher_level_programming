@@ -97,16 +97,49 @@ class Rectangle(Base):
 
     def display(self):
         """print the width and height of the Rectangle as # """
-        for _ in range(0, self.x):
-            print('\n', end="")
-        for _ in range(0, self.height):
-            for _ in range(0, self.y):
-                print(" ", end="")
-            for _ in range(0, self.width):
-                print("#", end="")
-            print()
+        if self.width == 0 or self.height == 0:
+            print("")
+            return
+        else:
+            for _ in range(0, self.x):
+                print('\n', end="")
+            for _ in range(0, self.height):
+                for _ in range(0, self.y):
+                    print(" ", end="")
+                for _ in range(0, self.width):
+                    print("#", end="")
+                print()
 
     def __str__(self):
         """return the string representation of the class"""
         return "[Rectangle] ({}) {}/{} - {}/{}"\
             .format(self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args):
+        """Update the Rectangle.
+
+        Args:
+            *args (ints): New attribute values.
+                - 1st argument is the id attribute
+                - 2nd argument is the width attribute
+                - 3rd argument is the height attribute
+                - 4th argument is the x attribute
+                - 5th argument is the y attribute
+        """
+        if args and len(args) != 0:
+            i = 0
+            for arg in args:
+                if i == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif i == 1:
+                    self.width = arg
+                elif i == 2:
+                    self.height = arg
+                elif i == 3:
+                    self.x = arg
+                elif i == 4:
+                    self.y = arg
+                i += 1
