@@ -31,6 +31,7 @@ class Square(Rectangle):
     def size(self):
         """The size Private instance getter"""
         return self.__size
+
     @size.setter
     def size(self, value):
         """The size Private instance setter"""
