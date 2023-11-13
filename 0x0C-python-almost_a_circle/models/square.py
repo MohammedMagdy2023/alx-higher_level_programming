@@ -10,7 +10,7 @@ class Square(Rectangle):
     Class Square module
     """
 
-    def __init__(self):
+    def __init__(self, size, x=0, y=0, id=None):
         """
         The init of the new class instances
         Args:
@@ -24,4 +24,22 @@ class Square(Rectangle):
             TypeError: If either of x or y is not an int.
             ValueError: If either of x or y < 0.
         """
-        super().__init__()
+        super().__init__(size, size, x, y, id)
+
+    @property
+    def size(self):
+        """The size Private instance getter"""
+        return self.__size
+    @size.setter
+    def size(self, value):
+        """The size Private instance setter"""
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__size = value
+
+    def __str__(self):
+        """return the string representation of the class"""
+        return "[Square] ({}) {}/{} - {}"\
+            .format(self.id, self.x, self.y, self.width)
