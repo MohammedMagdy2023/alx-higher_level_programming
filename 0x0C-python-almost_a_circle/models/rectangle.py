@@ -101,12 +101,12 @@ class Rectangle(Base):
             print("")
             return
         else:
-            for _ in range(0, self.x):
+            for _ in range(self.x):
                 print('\n', end="")
-            for _ in range(0, self.height):
-                for _ in range(0, self.y):
+            for _ in range(self.height):
+                for _ in range(self.y):
                     print(" ", end="")
-                for _ in range(0, self.width):
+                for _ in range(self.width):
                     print("#", end="")
                 print()
 
