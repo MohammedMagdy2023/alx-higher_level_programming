@@ -1,77 +1,24 @@
 #!/usr/bin/python3
-"""The Rectangle class that inherit from base class"""
+"""
+This is test module for the rectangle models
+"""
+import unittest
+from models.rectangle import Rectangle
 
 
-from .base import Base
-class Rectangle(Base):
-    """
-    The Rectangle Class thaat inherit from base
-    Private instance attributes, each with its own public getter and setter:
-    __width -> width
-    __height -> height
-    __x -> x
-    __y -> y
-    """
+class TestRectangle(unittest.TestCase):
+    def setUp(self):
+        self.r1 = Rectangle(4, 6, 2, 1, 12)
 
-    def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+    def test_attributes(self):
+        self.assertEqual(self.r1.width, 4)
+        self.assertEqual(self.r1.height, 6)
+        self.assertEqual(self.r1.x, 2)
+        self.assertEqual(self.r1.y, 1)
+        self.assertEqual(self.r1.id, 12)
 
-    @property
-    def width(self):
-        return self.__width
+    def test_area(self):
+        self.assertEqual(self.r1.area(), 24)
 
-    @width.setter
-    def width(self, value):
-        if value <= 0 :
-            raise ValueError("width must be > 0")
-        elif not isinstance(value, int):
-            raise TypeError("width must be integer")
-        else:
-            self.__width = value
-            return self.__width
-
-    @property
-    def height(self):
-        return self.__height
-
-    @height.setter
-    def height(self, value):
-        if value <= 0 :
-            raise ValueError("height must be > 0")
-        elif not isinstance(value, int):
-            raise TypeError("height must be integer")
-        else:
-            self.__height= value
-            return self.__height
-
-    @property
-    def x(self):
-        return self.__x
-
-    @x.setter
-    def x(self, value):
-        if value <= 0 :
-            raise ValueError("x must be > 0")
-        elif not isinstance(value, int):
-            raise TypeError("x must be integer")
-        else:
-            self.__x = value
-            return self.__x
-
-    @property
-    def y(self):
-        return self.__y
-
-    @y.setter
-    def y(self, value):
-        if value <= 0 :
-            raise ValueError("x must be > 0")
-        elif not isinstance(value, int):
-            raise TypeError("x must be integer")
-        else:
-            self.__y = value
-            return self.__y
+if __name__ == '__main__':
+    unittest.main()
