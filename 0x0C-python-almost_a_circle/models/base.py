@@ -46,4 +46,4 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-
+        pass
