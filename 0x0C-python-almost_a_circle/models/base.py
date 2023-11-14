@@ -36,8 +36,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """write a json file of list_objs"""
-        dist = cls.__name__ + ".json"
-        with open(dist, "w") as jsonfile:
+        with open(cls.__name__ + ".json", "w") as jsonfile:
             if list_objs is None:
                 jsonfile.write("[]")
             else:
@@ -46,7 +45,16 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        pass
+        """
+        Return a class instantied from a dictionary of attributes.
+        """
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                new_class = cls(1, 1)
+            else:
+                new_class = cls(1)
+            new_class.update(**dictionary)
+            return new_class
 
     @staticmethod
     def from_json_string(json_string):
@@ -56,3 +64,15 @@ class Base:
         if json_string is None or json_string == "[]":
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Return a list of classes instantiated from a file of JSON strings.
+        """
+        try:
+            with open(cls.__name__ + ".json", "r") as f:
+                dicts = Base.from_json_string(f.read())
+                return [cls.create(**dictionary) for dictionary in dicts]
+        except IOError:
+            return []
