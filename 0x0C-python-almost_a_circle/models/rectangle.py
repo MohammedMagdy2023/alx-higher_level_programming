@@ -156,7 +156,12 @@ class Rectangle(Base):
                     self.y = value
 
     def to_dictionary(self):
-        keys = ['id', 'width', 'height', 'x', 'y']
-        values = [self.id, self.width, self.height, self.x, self.y ]
-        dictionary = dict(zip(keys, values))
+        """Rectangle instance to dictionary representation"""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
         return dictionary
