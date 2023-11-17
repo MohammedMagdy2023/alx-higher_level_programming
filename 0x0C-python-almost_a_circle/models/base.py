@@ -3,6 +3,7 @@
 import json
 import csv
 
+
 class Base:
     """
     the first base class
@@ -88,7 +89,8 @@ class Base:
                 if cls.__name__ == 'Rectangle':
                     writer.writerow(['id', 'width', 'height', 'x', 'y'])
                     for obj in list_objs:
-                        writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                        writer.writerow([obj.id, obj.width,
+                                        obj.height, obj.x, obj.y])
                 elif cls.__name__ == 'Square':
                     writer.writerow(['id', 'size', 'x', 'y'])
                     for obj in list_objs:
@@ -107,10 +109,12 @@ class Base:
                 for row in reader:
                     if cls.__name__ == 'Rectangle':
                         id, width, height, x, y = row
-                        list_objs.append(cls(int(width), int(height), int(x), int(y), int(id)))
+                        list_objs.append(cls(int(width), int(height),
+                                            int(x), int(y), int(id)))
                     elif cls.__name__ == 'Square':
                         id, size, x, y = row
-                        list_objs.append(cls(int(size), int(x), int(y), int(id)))
+                        list_objs.append(cls(int(size), int(x),
+                                            int(y), int(id)))
         except IOError:
             return []
         return list_objs
