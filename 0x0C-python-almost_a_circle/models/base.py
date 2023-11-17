@@ -115,8 +115,8 @@ class Base:
                     elif cls.__name__ == 'Square':
                         id, size, x, y = row
                         list_objs.append(
-                            cls(int(size), int(x), int(y), cls(int(id)))
-                        )
+                            cls(int(size), int(x), int(y), int(id))
+                            )
         except IOError:
             return []
         return list_objs
