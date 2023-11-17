@@ -79,6 +79,9 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """
+        write a csv file of list_objs
+        """
         with open(cls.__name__ + '.csv', 'w', newline='') as f:
             if list_objs is not None:
                 writer = csv.writer(f)
@@ -94,7 +97,7 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """
-        Return a list of classes instantiated from a file of JSON strings.
+        Return a list of classes instantiated from a file of csv strings.
         """
         try:
             with open(cls.__name__ + '.csv', 'r', newline='') as f:
