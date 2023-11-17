@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """The base class is here"""
 import json
-
+import csv
 
 class Base:
     """
@@ -74,5 +74,37 @@ class Base:
             with open(cls.__name__ + ".json", "r") as f:
                 dicts = Base.from_json_string(f.read())
                 return [cls.create(**dictionary) for dictionary in dicts]
+        except IOError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        with open(cls.__name__ + '.csv', 'w', newline='') as f:
+            if list_objs is not None:
+                writer = csv.writer(f)
+                if cls.__name__ == 'Rectangle':
+                    writer.writerow(['id', 'width', 'height', 'x', 'y'])
+                    for obj in list_objs:
+                        writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                elif cls.__name__ == 'Square':
+                    writer.writerow(['id', 'size', 'x', 'y'])
+                    for obj in list_objs:
+                        writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Return a list of classes instantiated from a file of JSON strings.
+        """
+        try:
+            with open(cls.__name__ + '.csv', 'r', newline='') as f:
+                reader = csv.reader(f)
+                for row in reader:
+                    if cls.__name__ == 'Rectangle':
+                        id, width, height, x, y = row
+                        cls.__name__.append(cls(int(width), int(height), int(x), int(y), int(id)))
+                    elif cls.__name__ == 'Square':
+                        id, size, x, y = row
+                        cls.__name__.append(cls(int(size), int(x), int(y), int(id)))
         except IOError:
             return []
