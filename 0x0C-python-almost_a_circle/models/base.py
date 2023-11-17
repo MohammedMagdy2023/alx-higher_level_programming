@@ -110,11 +110,11 @@ class Base:
                     if cls.__name__ == 'Rectangle':
                         id, width, height, x, y = row
                         list_objs.append(cls(int(width), int(height),
-                                            int(x), int(y), int(id)))
+                                                int(x), int(y), int(id)))
                     elif cls.__name__ == 'Square':
                         id, size, x, y = row
                         list_objs.append(cls(int(size), int(x),
-                                            int(y), int(id)))
+                                                int(y), int(id)))
         except IOError:
             return []
         return list_objs
