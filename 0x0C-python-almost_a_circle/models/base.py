@@ -109,8 +109,8 @@ class Base:
                 for row in reader:
                     if cls.__name__ == 'Rectangle':
                         id, width, height, x, y = row
-                        rec = cls(int(width), int(height), 
-                                int(x), int(y), int(id))
+                        rec = cls(int(width), int(height),
+                                  int(x), int(y), int(id))
                         list_objs.append(rec)
                     elif cls.__name__ == 'Square':
                         id, size, x, y = row
