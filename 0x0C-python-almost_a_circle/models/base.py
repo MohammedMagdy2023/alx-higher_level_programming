@@ -103,6 +103,7 @@ class Base:
         try:
             with open(cls.__name__ + '.csv', 'r', newline='') as f:
                 reader = csv.reader(f)
+                next(reader)
                 for row in reader:
                     if cls.__name__ == 'Rectangle':
                         id, width, height, x, y = row
