@@ -109,12 +109,14 @@ class Base:
                 for row in reader:
                     if cls.__name__ == 'Rectangle':
                         id, width, height, x, y = row
-                        list_objs.append(cls(int(width), int(height)))
-                        list_objs.append(cls(int(x), int(y), int(id)))
+                        rec = cls(int(width), int(height), 
+                                int(x), int(y), int(id))
+                        list_objs.append(rec)
                     elif cls.__name__ == 'Square':
                         id, size, x, y = row
-                        list_objs.append(cls(int(size), int(x), int(y)))
-                        list_objs.append(cls(int(id)))
+                        list_objs.append(
+                            cls(int(size), int(x), int(y), cls(int(id)))
+                        )
         except IOError:
             return []
         return list_objs
