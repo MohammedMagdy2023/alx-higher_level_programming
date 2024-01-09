@@ -2,9 +2,11 @@
 
 const args = process.argv.slice(2);
 
-if (args[0] === undefined || Number(args[0]) === 1) {
+if (args[0] === undefined) {
   console.log(0);
-} else {
+} else if (Number(args[0]) === 1) { 
+  console.log(0);
+}else {
   Number(args);
   args.sort();
   args.reverse();
