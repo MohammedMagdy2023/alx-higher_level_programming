@@ -12,10 +12,10 @@ if __name__ == "__main__":
 
     conn = sql.connect(host="localhost",
                        port=3306,
-                       username=USERNAME,
-                       password=PASSWORD,
-                       database=DATABASE
-                       charset="uft8")
+                       user=USERNAME,
+                       passwd=PASSWORD,
+                       db=DATABASE,
+                       charset="utf8")
 
     cur = conn.cursor()
     cur.execute("SELECT * FROM states WHERE name LIKE 'N%'")
