@@ -5,7 +5,6 @@
 if __name__ == "__main__":
     import MySQLdb as sql
     import sys
-
     USERNAME = sys.argv[1]
     PASSWORD = sys.argv[2]
     DATABASE = sys.argv[3]
@@ -18,10 +17,10 @@ if __name__ == "__main__":
                        charset="utf8")
 
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%'")
-    rows = cur.fetchall()
-    for row in rows:
+    cur.execute("SELECT * FROM states WHERE name LIKE \"N%\"")
+    query_rows = cur.fetchall()
+    for row in query_rows:
         print(row)
-
     cur.close()
     conn.close()
+
