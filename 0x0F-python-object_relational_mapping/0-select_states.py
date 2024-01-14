@@ -2,10 +2,9 @@
 """ Select states of the Mysql database in ascending order"""
 
 
-import MySQLdb as sql
-import sys
-
 if __name__ == "__main__":
+    import MySQLdb as sql
+    import sys
     USERNAME = sys.argv[1]
     PASSWORD = sys.argv[2]
     DATABASE = sys.argv[3]
@@ -18,7 +17,7 @@ if __name__ == "__main__":
                        charset="utf8")
 
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT * FROM states ORDER BY id")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
