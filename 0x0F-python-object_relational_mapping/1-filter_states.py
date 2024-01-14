@@ -5,19 +5,18 @@
 if __name__ == "__main__":
     import MySQLdb as sql
     import sys
-    USERNAME = sys.argv[1]
-    PASSWORD = sys.argv[2]
-    DATABASE = sys.argv[3]
 
     conn = sql.connect(host="localhost",
                        port=3306,
-                       user=USERNAME,
-                       passwd=PASSWORD,
-                       db=DATABASE,
+                       user=sys.argv[1],
+                       passwd=sys.argv[2],
+                       db=sys.argv[3],
                        charset="utf8")
 
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY states.id")
+    cur.execute("""SELECT * FROM states
+                WHERE name LIKE BINARY 'N%'
+                ORDER BY states.id""")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
