@@ -5,5 +5,5 @@ import urllib.request
 
 
 if __name__ == "__main__":
-    with urllib.request.urlopen(url = sys.argv[1]) as conn:
+    with urllib.request.urlopen(sys.argv[1]) as conn:
         print(dict(conn.headers).get("X-Request-Id"))
