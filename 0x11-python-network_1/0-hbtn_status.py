@@ -9,7 +9,7 @@ if __name__ == "__main__":
         resp = conn.read()
         page_type = type(resp)
         utf_content = resp.decode("UTF-8")
-        print(f"""Body response:
-        - type: {page_type}
-        - content: {resp}
-        - utf8 content: {utf_content}""")
+        print("Body response:")
+        print("\t- type: {}".format(page_type))
+        print("\t- content: {}".format(resp))
+        print("\t- utf8 content: {}".format(utf_content))
