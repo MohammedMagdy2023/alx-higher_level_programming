@@ -3,9 +3,9 @@
 
 
 if __name__ == "__main__":
-    from urllib.request import urlopen
+    import urllib.request
 
-    with urlopen('https://alx-intranet.hbtn.io/status') as conn:
+    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as conn:
         resp = conn.read()
         page_type = type(resp)
         utf_content = resp.decode("UTF-8")
