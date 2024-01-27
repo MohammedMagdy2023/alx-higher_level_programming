@@ -2,12 +2,12 @@
 
 const args = process.argv.slice(2);
 
-if (args[0] === undefined) {
-  console.log(0);
-} else if (Number(args[0]) === 1) {
+if (args.length <= 1) {
   console.log(0);
 } else {
-  Number(args);
-  args.sort().reverse();
-  console.log(args[1]);
+  let arr = args.map(Number);
+  let set = new Set(arr);
+  arr = Array.from(set);
+  arr.sort((a, b) => a - b);
+  console.log(arr[arr.length - 2]);
 }
