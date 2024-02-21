@@ -8,6 +8,6 @@ request.get(url, (error, response, body) => {
     console.error(error);
   } else {
     response = JSON.parse(response.body);
-    console.log(response["title"]);
+    console.log(response.title);
   }
 });
