@@ -1,11 +1,11 @@
 #!/usr/bin/node
 
-function callMeMoby(x, f) {
-  for (var i = 0; i < x; i++) {
+function callMeMoby (x, f) {
+  for (let i = 0; i < x; i++) {
     f();
-  };
-};
+  }
+}
 
 module.exports = {
-  callMeMoby,
+  callMeMoby
 };
